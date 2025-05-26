@@ -12,6 +12,7 @@ VALUES
 ('Carol King', 'Mountain Range');
 
 SELECT * FROM rangers;
+DROP Table rangers
 
 CREATE TABLE species (
     species_id SERIAL PRIMARY KEY,
@@ -73,7 +74,7 @@ GROUP BY name
 ORDER BY name;
 
 -- Problem Five
-SELECT * FROM species
+SELECT common_name FROM species
 WHERE species.species_id NOT IN(
     SELECT species_id FROM sightings WHERE species_id IS NOT NULL
 );
@@ -100,3 +101,9 @@ SELECT
     ELSE 'Evening'
   END AS time_of_day
 FROM sightings;
+
+-- Problem Nine
+DELETE FROM rangers
+WHERE ranger_id NOT IN (
+    SELECT DISTINCT ranger_id FROM sightings
+);
