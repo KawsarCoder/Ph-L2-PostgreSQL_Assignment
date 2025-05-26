@@ -1,14 +1,14 @@
-## Questionnaire
+# Questionnaire
 
-### What is PostgreSQL?
+## What is PostgreSQL?
 
 PostgreSQL হলো ওপেন সোর্স রিলেশনাল ডাটাবেস ম্য়ানেজমেন্ট সিস্টেম। এটি দিয়ে আমরা কোনো একটা ডাটাবেস তৈরি করতে পারি, ডিলেট করতে পারি, সংরক্ষণ করতে পারি, টেবিল আকারে সাজাতে পারি, প্রয়োজন অনুসারে আপডেট করতে পারি। এটির মাধ্যমে বিভিন্ন ধরনের কুয়েরি ও ডাটা ইন্ট্রিগেশন করা যায়। এটির মাধ্য়মে বিভিন্ন ধরনের ডাটা টাইপ এডড করা যায়। এটি বর্তমানে খুব জনপ্রিয় একটি ডাটাবেস সিস্টেম।
 
-### What is the purpose of a database schema in PostgreSQL?
+## What is the purpose of a database schema in PostgreSQL?
 
 PostgreSQL এর মধ্যে ডাটাবেস স্কিমার উদ্দেশ্য হলো ডাটাবেসের ভিতরের ডাটা আর অবজেক্টগুলো সুন্দরভাবে সাজিয়ে গুছিয়ে রাখা। এখানে টেবিল, ফাংশন ইত্যাদি রাখা হয়। এর মাধ্যমে ডাটাবেসকে ম্যানেজমেন্ট সহজ হয় এবং আরো বেশি কার্যকর করে তোলে। যার মাধ্যমে নিরাপদ আর নিয়ন্ত্রণ করা সহজ হয়।
 
-### Explain the Primary Key and Foreign Key concepts in PostgreSQL.
+## Explain the Primary Key and Foreign Key concepts in PostgreSQL.
 
 -- Primary Key:
 Primary Key মূলত একটি Unique Key এটি একটি কলাম বা ফিল্ডকে আলাদাভাবে চিনতে সাহায্য করে। এটি কখনো নাল হয় না। একটি টেবিলে শুধুমাত্র একটা Primary Key থাকে।
@@ -22,7 +22,7 @@ Foreign Key মূলত অন্য একটা টেবিলের Primary
 উদাহরণ:
 student_id যদি enrollments টেবিলে Foreign Key হয়, তাহলে সেটি students টেবিলের student_id কে রেফার করে।
 
-### What is the difference between the VARCHAR and CHAR data types?
+## What is the difference between the VARCHAR and CHAR data types?
 
 VARCHAR:
 
@@ -36,7 +36,7 @@ CHAR:
 - যদি CHAR(10) দেয়া হয় আর যদি সেখানে ৭ অক্ষরের ডাটা রাখা হয় তাহলে এটি ৭ অক্ষর সহ বাকি ৩ অক্ষরের ডাটাও ধারণ করবে। যার ফলে অতিরিক্ত স্পেস নিয়ে থাকে।
 - এটা যে ডাটা গুলোর দৈর্য্য সবসময় ফিক্সড থাকে সেগুলোর জন্য ব্যবহার করা ভালো।
 
-### How can you modify data using UPDATE statements?
+## How can you modify data using UPDATE statements?
 
 PostgreSQL এ কোনো একটা টেবিলে থাকা ডাটা আপডেট করতে UPDATE স্টেটমেন্ট ব্যবহার করা হয়। যেমন:
 
