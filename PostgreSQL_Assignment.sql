@@ -59,3 +59,7 @@ VALUES
 SELECT COUNT(DISTINCT species_id) as unique_species_count
 FROM sightings
 WHERE species_id IS NOT NULL;
+
+SELECT * FROM sightings
+WHERE location LIKE '%Pass%';
+
