@@ -13,14 +13,12 @@ VALUES
 
 SELECT * FROM rangers;
 
-CREATE TYPE species_status as ENUM ('Endangered', 'Vulnerable');
-
 CREATE TABLE species (
     species_id SERIAL PRIMARY KEY,
     common_name VARCHAR(255) NOT NULL,
     scientific_name VARCHAR(255) NOT NULL,
     discovery_date DATE,
-    conservation_status species_status NOT NULL DEFAULT 'Endangered'
+    conservation_status VARCHAR(255) NOT NULL DEFAULT 'Endangered'
 );
 
 INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status)
@@ -30,6 +28,7 @@ VALUES
 ('Red Panda','Ailurus fulgens','1825-01-01','Vulnerable'),
 ('Asiatic Elephant','Elephas maximus indicus','1758-01-01','Endangered');
 
+DROP TABLE species;
 SELECT * FROM species;
 
 CREATE TABLE sightings(
@@ -79,3 +78,15 @@ WHERE species.species_id NOT IN(
     SELECT species_id FROM sightings WHERE species_id IS NOT NULL
 );
 
+-- Problem Six
+SELECT common_name, sighting_time, name FROM sightings
+INNER JOIN rangers ON sightings.ranger_id = rangers.ranger_id
+INNER JOIN species ON sightings.species_id = species.species_id
+ORDER BY sighting_time DESC LIMIT 2;
+
+-- Problem Seven
+Update species
+SET conservation_status = 'Historic'
+WHERE EXTRACT(YEAR FROM discovery_date) < 1800;
+
+SELECT * FROM species;
