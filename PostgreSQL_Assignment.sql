@@ -12,7 +12,6 @@ VALUES
 ('Carol King', 'Mountain Range');
 
 SELECT * FROM rangers;
-DROP Table rangers
 
 CREATE TABLE species (
     species_id SERIAL PRIMARY KEY,
@@ -29,7 +28,6 @@ VALUES
 ('Red Panda','Ailurus fulgens','1825-01-01','Vulnerable'),
 ('Asiatic Elephant','Elephas maximus indicus','1758-01-01','Endangered');
 
-DROP TABLE species;
 SELECT * FROM species;
 
 CREATE TABLE sightings(
@@ -49,7 +47,6 @@ VALUES
 (3, 3, 'Bamboo Grove East', '2024-05-15 09:10:00', 'Feeding observed'),
 (1, 2, 'Snowfall Pass', '2024-05-18 18:30:00', NULL);
 
-DROP TABLE sightings;
 SELECT * FROM sightings;
 
 -- Problem One
