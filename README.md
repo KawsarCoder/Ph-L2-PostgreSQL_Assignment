@@ -48,11 +48,9 @@ WHERE condition.
 
 উদাহরণ:
 ধরি students নামের একটা টেবিল আছে। যেখানে name এবং age নামের কলাম আছে। তাহলে আমরা নিচের নিয়মে আপডেট করতে পারি:
-‍‍‍```
-UPDATE students
-SET age = 25
-WHERE name = 'Kawsar';
 
 ```
-
+UPDATE students
+SET age = 25
+WHERE name = 'Kawsar'
 ```
