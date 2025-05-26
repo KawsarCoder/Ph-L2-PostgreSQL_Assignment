@@ -34,15 +34,15 @@ SELECT * FROM species;
 
 CREATE TABLE sightings(
     sighting_id SERIAL PRIMARY KEY,
-    ranger_id INT REFERENCES rangers(ranger_id),
     species_id INT REFERENCES species(species_id),
+    ranger_id INT REFERENCES rangers(ranger_id),
     location VARCHAR(255),
     sighting_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     notes VARCHAR(255)
 );
 
 
-INSERT INTO sightings (ranger_id, species_id, location, sighting_time, notes)
+INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes)
 VALUES
 (1, 1, 'Peak Ridge', '2024-05-10 07:45:00', 'Camera trap image captured'),
 (2, 2, 'Bankwood Area', '2024-05-12 16:20:00', 'Juvenile seen'),
@@ -56,10 +56,18 @@ INSERT INTO rangers (name, region)
 VALUES
 ('Derek Fox', 'Coastal PlainsCoastal Plains');
 
+-- Problem One
 SELECT COUNT(DISTINCT species_id) as unique_species_count
 FROM sightings
 WHERE species_id IS NOT NULL;
 
+-- Problem Two
 SELECT * FROM sightings
 WHERE location LIKE '%Pass%';
 
+--Problem Three
+SELECT name, COUNT(*) as total_sightings
+FROM sightings
+INNER JOIN rangers ON sightings.ranger_id = rangers.ranger_id
+GROUP BY name
+ORDER BY name;
