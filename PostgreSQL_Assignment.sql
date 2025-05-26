@@ -52,22 +52,30 @@ VALUES
 DROP TABLE sightings;
 SELECT * FROM sightings;
 
+-- Problem One
 INSERT INTO rangers (name, region)
 VALUES
 ('Derek Fox', 'Coastal PlainsCoastal Plains');
 
--- Problem One
+-- Problem Two
 SELECT COUNT(DISTINCT species_id) as unique_species_count
 FROM sightings
 WHERE species_id IS NOT NULL;
 
--- Problem Two
+-- Problem Three
 SELECT * FROM sightings
 WHERE location LIKE '%Pass%';
 
---Problem Three
+--Problem Four
 SELECT name, COUNT(*) as total_sightings
 FROM sightings
 INNER JOIN rangers ON sightings.ranger_id = rangers.ranger_id
 GROUP BY name
 ORDER BY name;
+
+-- Problem Five
+SELECT * FROM species
+WHERE species.species_id NOT IN(
+    SELECT species_id FROM sightings WHERE species_id IS NOT NULL
+);
+
